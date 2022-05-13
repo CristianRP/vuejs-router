@@ -21,10 +21,18 @@ export default {
   data() {
     return {
       links: [
-        { to: '/home', name: 'Pokemons' },
-        { to: '/50', name: 'By Id' },
-        { to: '/about', name: 'About' },
+        { to: 'pokemon-home', name: 'Pokemons' },
+        { to: 'pokemon-id', name: 'By Id', id: 151 },
+        { to: 'pokemon-about', name: 'About' },
+
+        { to: 'dbz-characters', name: 'Characteres' },
+        { to: 'dbz-about', name: 'About' },
+
         { to: 'https://google.com', name: 'Google' }
+        // { to: '/home', name: 'Pokemons' },
+        // { to: '/50', name: 'By Id' },
+        // { to: '/about', name: 'About' },
+        // { to: 'https://google.com', name: 'Google' }
       ]
     }
   }

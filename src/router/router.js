@@ -9,7 +9,12 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   // { path: '/', component: ListPage },
   {
-    path: "/",
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: "/home",
+    name: 'home',
     component: () =>
       import(
         /* webpackChunkName: "ListPage" */ "../modules/pokemon/pages/ListPage"
@@ -17,13 +22,14 @@ const routes = [
   },
   {
     path: "/about",
+    name: 'about',
     component: () =>
       import(
         /* webpackChunkName: "AboutPage" */ "../modules/pokemon/pages/AboutPage"
       ),
   },
   {
-    path: "/:id",
+    path: "/pokemonid/:id",
     name: "pokemon-id",
     component: () =>
       import(

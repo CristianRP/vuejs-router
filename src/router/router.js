@@ -82,6 +82,36 @@ const routes = [
   //     return isNaN(id) ? { id: 1 } : { id: id }
   //   }
   // },
+  // DBZ LAYOUT
+  {
+    path: '/dbz',
+    component: () =>
+      import(
+        /* webpackChunkName: "DBZLayout" */ "../modules/dbz/layouts/DragonBallLayout"
+      ),
+    children: [
+      {
+        path: 'characters',
+        name: 'dbz-characters',
+        component: () =>
+          import(
+            /* webpackChunkName: "DBZ-Characteres" */ "../modules/dbz/pages/Characteres"
+          )
+      },
+      {
+        path: 'about',
+        name: 'dbz-about',
+        component: () =>
+          import(
+            /* webpackChunkName: "DBZ-About" */ "../modules/dbz/pages/About"
+          )
+      },
+      {
+        path: "",
+        redirect: { name: 'dbz-characters' }
+      },
+    ]
+  },
   {
     path: "/:pathMatch(.*)*",
     component: () =>
